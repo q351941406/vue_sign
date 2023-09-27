@@ -1,18 +1,12 @@
 <template>
+  <Analytics />
   <a-table :dataSource="dataSource" :columns="columns" :pagination="false" :loading="loading" />
 </template>
 
 <script lang="ts">
 
 import { ref ,onMounted} from "vue";
-import type { TableColumnType, TableProps } from 'ant-design-vue';
-type TableDataType = {
-  app_id:number
-  key: string;
-  name: string;
-  age: number;
-  address: string;
-};
+import { Analytics } from '@vercel/analytics/react';
 
 export default {
   setup() {

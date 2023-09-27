@@ -10,6 +10,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.2",
     "ant-design-vue": "^4.0.3",
     "react": "^18.2.0",
     "vue": "^3.3.4"
