@@ -45,13 +45,18 @@ export default {
       },
       {
         title: "过期时间",
-        sorter: (a: { expire: string | number | Date; }, b: { expire: string | number | Date; }) => {
-        const dateA = new Date(a.expire);
-        const dateB = new Date(b.expire);
-        return dateA.getTime() - dateB.getTime(); // 如果a的日期在b之前，会返回负值，反之返回正值
-    },
         dataIndex: "expire",
         key: "expire",
+        sorter: (a: { expire: string | number | Date; }, b: { expire: string | number | Date; }) => {
+          const dateA = new Date(a.expire);
+          const dateB = new Date(b.expire);
+          return dateA.getTime() - dateB.getTime(); // 如果a的日期在b之前，会返回负值，反之返回正值
+        },
+      },
+      {
+        title: "备注",
+        dataIndex: "remark",
+        key: "remark",
       },
       {
         title: "状态",
@@ -64,6 +69,7 @@ export default {
         onFilter: (value: any, record: { status: any; }) => record.status === value,
       },
     ];
+
     let loading = ref(true)
     const domain = import.meta.env.VITE_DOMAIN
 
