@@ -5,6 +5,14 @@
 <script lang="ts">
 
 import { ref ,onMounted} from "vue";
+import type { TableColumnType, TableProps } from 'ant-design-vue';
+type TableDataType = {
+  app_id:number
+  key: string;
+  name: string;
+  age: number;
+  address: string;
+};
 
 export default {
   setup() {
@@ -12,6 +20,7 @@ export default {
     const columns = [
       {
         title: "ID",
+        sorter: (a: { app_id: number; }, b: { app_id: number; }) => a.app_id - b.app_id,
         dataIndex: "app_id",
         key: "id",
       },
@@ -42,6 +51,11 @@ export default {
       },
       {
         title: "过期时间",
+        sorter: (a: { expire: string | number | Date; }, b: { expire: string | number | Date; }) => {
+        const dateA = new Date(a.expire);
+        const dateB = new Date(b.expire);
+        return dateA.getTime() - dateB.getTime(); // 如果a的日期在b之前，会返回负值，反之返回正值
+    },
         dataIndex: "expire",
         key: "expire",
       },
