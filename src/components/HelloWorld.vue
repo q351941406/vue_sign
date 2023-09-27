@@ -52,10 +52,12 @@ export default {
       },
     ];
     let loading = ref(true)
+    const domain = import.meta.env.VITE_DOMAIN
+
     // 发起GET请求
     onMounted(() => {
       // 使用fetch API 发起GET请求
-      fetch("https://ios.telesearch.vip/api/app")
+      fetch(domain + "api/app")
         .then((response) => {
           if (!response.ok) {
             throw new Error(`请求失败，状态码: ${response.status}`);
