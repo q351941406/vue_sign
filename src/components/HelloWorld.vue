@@ -57,6 +57,11 @@ export default {
         title: "状态",
         dataIndex: "status",
         key: "status",
+        filters: [ // 添加这个属性来定义筛选项的列表
+          { text: '0', value: 0 },
+          { text: '1', value: 1 },
+        ],
+        onFilter: (value: any, record: { status: any; }) => record.status === value,
       },
     ];
     let loading = ref(true)
