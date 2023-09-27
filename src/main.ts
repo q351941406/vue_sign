@@ -2,6 +2,8 @@
 import { createApp } from "vue";
 import Antd from "ant-design-vue";
 import App from "./App.vue";
+import { inject } from '@vercel/analytics';
 
+inject();
 const app = createApp(App);
 app.use(Antd).mount("#app");

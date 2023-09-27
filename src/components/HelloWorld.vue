@@ -1,12 +1,12 @@
 <template>
-  <Analytics />
+  <!-- <Analytics /> -->
   <a-table :dataSource="dataSource" :columns="columns" :pagination="false" :loading="loading" />
 </template>
 
 <script lang="ts">
 
 import { ref ,onMounted} from "vue";
-import { Analytics } from '@vercel/analytics/react';
+// import { Analytics } from '@vercel/analytics/react';
 
 export default {
   setup() {
