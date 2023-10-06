@@ -39,9 +39,9 @@ export default {
         key: "today_new_UDID_count",
       },
       {
-        title: "今日新增打开次数",
-        dataIndex: "today_first_time_users_count",
-        key: "today_first_time_users_count",
+        title: "今日打开次数",
+        dataIndex: "daily_count",
+        key: "daily_count",
       },
       {
         title: "过期时间",
